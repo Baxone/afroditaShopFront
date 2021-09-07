@@ -1,1 +1,25 @@
-<p>detail-product works!</p>
+<section class="container mt-3">
+  <div class="card p-3 mb-2 shadow">
+    <div class="d-flex justify-content-between">
+      <div class="d-flex flex-row align-items-center">
+        <div class="c-details">
+          <h4 class="mb-0">{{myProduct?.name}}</h4>
+        </div>
+      </div>
+      <div class="badge"> <span>{{myProduct?.category}}</span> </div>
+    </div>
+    <div class="mt-3">
+      <h6>{{myProduct?.description}}</h6>
+      <div class="mt-3">
+        <div class="mt-3"> <span class="text1">Precio: </span> <span class="text2">{{myProduct?.price}} euros</span>
+        </div>
+        <div> <span class="text1">Disponibilidad: <span class="text2"
+              [ngClass]="{ 'green': myProduct?.available === 1, 'red': myProduct?.available === 0}">{{
+              (myProduct?.available === 1)? 'Hay stock' :
+              'No disponible'}}</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button [routerLink]="['/products-list']" class="btn btn-danger">Volver al listado</button>
+</section>
