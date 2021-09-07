@@ -1,0 +1,33 @@
+<section class="container">
+  <button class="btn btn-success d-block ms-auto">Nuevo producto</button>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Descripción</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Categoría</th>
+        <th scope="col">Disponibilidad</th>
+        <th scope="col">Fecha publicación</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr *ngFor="let product of arrProducts">
+        <th scope="row">{{product?.id}}</th>
+        <td>{{product?.name}}</td>
+        <td>{{product?.description}}</td>
+        <td>{{product?.price}}</td>
+        <td>{{product?.category}}</td>
+        <td>{{product?.available}}</td>
+        <td>{{product?.created_at | date:"dd/mm/yy"}}</td>
+        <td> <button class="btn btn-sm btn-warning">Actualizar</button></td>
+        <td> <button class="btn btn-sm btn-danger">Borrar</button></td>
+      </tr>
+
+    </tbody>
+  </table>
+</section>

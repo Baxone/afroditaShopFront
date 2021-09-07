@@ -18,6 +18,8 @@ import { Error404Component } from './components/error404/error404.component';
 import { HeaderComponent } from './components/header/header.component';
 import { CardProductComponent } from './components/card-product/card-product.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { ProductsComponent } from './components/profile/products/products.component';
+import { ClientsComponent } from './components/profile/clients/clients.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { ProfileComponent } from './components/profile/profile.component';
     Error404Component,
     HeaderComponent,
     CardProductComponent,
-    ProfileComponent
+    ProfileComponent,
+    ProductsComponent,
+    ClientsComponent
   ],
   imports: [
     BrowserModule,

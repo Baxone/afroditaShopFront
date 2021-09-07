@@ -32,4 +32,13 @@ export class UsersService {
     return this.httpClient.post<any>(this.baseUrl + 'login', pFormValue, httpOptions).toPromise();
   }
 
+  getUser(): Promise<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': localStorage.getItem('token')!
+      })
+    }
+    return this.httpClient.get<any>(this.baseUrl, httpOptions).toPromise();
+  }
+
 }

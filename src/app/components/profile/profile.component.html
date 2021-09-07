@@ -1,1 +1,10 @@
-<p>profile works!</p>
+<section class="container mt-3">
+  <h2>{{myUser?.username}}</h2>
+  <h3>Email: <a [href]="'mailto:'+ myUser?.email">{{myUser?.email}}</a></h3>
+</section>
+<hr>
+<section class="container" *ngIf="isAdmin">
+  <button [routerLink]="['/profile', 'products']" class="btn btn-lg btn-danger m-2">Productos</button>
+  <button [routerLink]="['/profile', 'clients']" class="btn btn-lg btn-danger m-2">Clientes</button>
+</section>
+<router-outlet></router-outlet>

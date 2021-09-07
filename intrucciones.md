@@ -51,6 +51,22 @@
     - Crear componente profile, crear ruta profile, crear un guard para proteger dicha ruta, que no me deje entrar si no estoy logado (si tengo token);
 
     
+### Cuarta Tarea.
 
+    - vamos a cargar la información de usuario en el dashboard, nombre y el correo electronico.
+
+    - vamos poner botones para cargar la tabla de productos y la tabla de clientes.
+    Estos botones solo van a ser visibles si soy admin no role.
+
+    - dentro de productos intentar hacer un CRUD, es decir borrar, update, eliminar y insertar productos.
+
+    
+### Quinta tarea.
+
+   - formulario de tipo model para dar de alta un producto. Usamos el mismo formulario tal y como hicimos el ej HTTP 
+   - Crear componente form, ruta hija dentro de profile
+   - Accion de borrar solo evento llama al servicio y borra.
+
+   
 
     
