@@ -48,6 +48,7 @@
 
     - form login, hacer login.
     
+    - Crear componente profile, crear ruta profile, crear un guard para proteger dicha ruta, que no me deje entrar si no estoy logado (si tengo token);
 
     
 
