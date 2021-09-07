@@ -18,13 +18,22 @@
             <a class="nav-link" routerLinkActive="active" [routerLink]="['/products-list']">Productos</a>
           </li>
 
-          <li class="nav-item">
+          <li class="nav-item" *ngIf="!logado">
             <a class="nav-link" routerLinkActive="active" [routerLink]="['/login']">Login</a>
           </li>
 
-          <li class="nav-item">
+          <li class="nav-item" *ngIf="!logado">
             <a class="nav-link" routerLinkActive="active" [routerLink]="['/register']">Registro</a>
           </li>
+
+          <li class="nav-item" *ngIf="logado">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/profile']">Panel</a>
+          </li>
+
+          <li class="nav-item" *ngIf="logado">
+            <a class="nav-link logout" routerLinkActive="active" (click)="logout()">Logout</a>
+          </li>
+
 
         </ul>
       </div>
