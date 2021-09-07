@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 //librerias
 import { HttpClientModule } from '@angular/common/http'
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 //componentes
@@ -17,6 +17,7 @@ import { DetailProductComponent } from './components/detail-product/detail-produ
 import { Error404Component } from './components/error404/error404.component';
 import { HeaderComponent } from './components/header/header.component';
 import { CardProductComponent } from './components/card-product/card-product.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -28,13 +29,15 @@ import { CardProductComponent } from './components/card-product/card-product.com
     DetailProductComponent,
     Error404Component,
     HeaderComponent,
-    CardProductComponent
+    CardProductComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
