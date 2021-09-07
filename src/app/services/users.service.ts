@@ -23,4 +23,13 @@ export class UsersService {
   }
 
 
+  login(pFormValue: any): Promise<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json'
+      })
+    }
+    return this.httpClient.post<any>(this.baseUrl + 'login', pFormValue, httpOptions).toPromise();
+  }
+
 }
