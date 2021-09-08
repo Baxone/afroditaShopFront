@@ -1,7 +1,13 @@
 <section class="container mt-5">
-  <div class="row g-4">
+  <h2>Hay {{total}} productos</h2>
+  <div class="row g-4" data-masonry='{"percentPosition": true }'>
     <article class="col-12 col-md-6 col-lg-4" *ngFor="let product of arrProducts">
       <app-card-product [product]="product"></app-card-product>
     </article>
   </div>
 </section>
+<hr>
+<div class="container mt-1 d-flex justify-content-between">
+  <button class="btn btn-sm btn-danger" (click)="gotoPage(prev)">ANTERIOR</button>
+  <button class="btn btn-sm btn-danger" (click)="gotoPage(next)">SIGUIENTE</button>
+</div>
