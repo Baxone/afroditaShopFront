@@ -9,15 +9,32 @@ import { ProductsService } from 'src/app/services/products.service';
 })
 export class ProductsComponent implements OnInit {
 
+  isMsg: boolean = false;
+  msg: string ="";
   arrProducts: Product[] = [];
   constructor(
     private productsService: ProductsService
   ) { }
 
   async ngOnInit() {
-
+    this.isMsg = false;
     this.arrProducts = await this.productsService.getAllAdmin();
 
   }
+
+  async saveFile(pId: number) : Promise<any>{
+    const msg = await this.productsService.delete(pId);
+    if(msg.sucess)
+    {
+      this.isMsg = true;
+      this.msg = msg.sucess;
+    }
+    if(this.isMsg)
+    {
+      this.arrProducts = await this.productsService.getAllAdmin();
+    }
+
+  }
+
 
 }

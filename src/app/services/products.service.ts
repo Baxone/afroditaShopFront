@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Product } from '../interfaces/product.interface';
+import { User } from '../interfaces/user.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -37,5 +38,32 @@ export class ProductsService {
       })
     }
     return this.httpClient.get<Product[]>(this.adminUrl + 'v2', httpOptions).toPromise();
+  }
+
+  create(newUser: User): Promise<any>{
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': localStorage.getItem('token')!
+      })
+    }
+    return this.httpClient.post<any>(this.adminUrl, newUser, httpOptions).toPromise();
+  }
+
+  update(user: User) : Promise<any>{
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': localStorage.getItem('token')!
+      })
+    }
+    return this.httpClient.put<any>(this.adminUrl + user.id, user, httpOptions).toPromise();
+  }
+
+  delete(id:number) : Promise<any>{
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': localStorage.getItem('token')!
+      })
+    }
+    return this.httpClient.delete<any>(this.adminUrl + id, httpOptions).toPromise();
   }
 }

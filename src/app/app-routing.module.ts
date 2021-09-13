@@ -6,6 +6,7 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { ProductsListComponent } from './components/products-list/products-list.component';
 import { ClientsComponent } from './components/profile/clients/clients.component';
+import { NewProductComponent } from './components/profile/new-product/new-product.component';
 import { ProductsComponent } from './components/profile/products/products.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { RegisterComponent } from './components/register/register.component';
@@ -20,6 +21,8 @@ const routes: Routes = [
   {
     path: "profile", component: ProfileComponent, canActivate: [LoginGuard], children: [
       { path: "products", component: ProductsComponent },
+      { path: "product/new", component: NewProductComponent },
+      { path: "product/update/:idproduct", component: NewProductComponent },
       { path: "clients", component: ClientsComponent },
     ]
   },

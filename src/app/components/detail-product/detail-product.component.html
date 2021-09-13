@@ -9,7 +9,7 @@
       <div class="badge"> <span>{{myProduct?.category}}</span> </div>
     </div>
     <div class="mt-3">
-      <h6>{{myProduct?.description}}</h6>
+      <h6 [innerHtml]="myProduct?.description"></h6>
       <div class="mt-3">
         <div class="mt-3"> <span class="text1">Precio: </span> <span class="text2">{{myProduct?.price}} euros</span>
         </div>

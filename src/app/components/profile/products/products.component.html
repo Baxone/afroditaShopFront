@@ -1,5 +1,10 @@
 <section class="container">
-  <button class="btn btn-success d-block ms-auto">Nuevo producto</button>
+  <hr>
+  <div *ngIf="isMsg" class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>{{msg}}</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  <button class="btn btn-success d-block ms-auto" [routerLink]="['/profile/product/new']">Nuevo producto</button>
   <table class="table">
     <thead>
       <tr>
@@ -19,13 +24,13 @@
       <tr *ngFor="let product of arrProducts">
         <th scope="row">{{product?.id}}</th>
         <td>{{product?.name}}</td>
-        <td>{{product?.description}}</td>
+        <td [innerHtml]="product?.description"></td>
         <td>{{product?.price}}</td>
         <td>{{product?.category}}</td>
         <td>{{product?.available}}</td>
         <td>{{product?.created_at | date:"dd/mm/yy"}}</td>
-        <td> <button class="btn btn-sm btn-warning">Actualizar</button></td>
-        <td> <button class="btn btn-sm btn-danger">Borrar</button></td>
+        <td> <button [routerLink]="['/profile', 'product', 'update', product?.id]" class="btn btn-sm btn-warning">Actualizar</button></td>
+        <td> <button class="btn btn-sm btn-danger" [swal]="{ title: 'Vas borrar el producto ' + product.name, showCancelButton: true }" (confirm)="saveFile(product.id)" >Borrar</button></td>
       </tr>
 
     </tbody>

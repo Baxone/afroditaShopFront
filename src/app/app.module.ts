@@ -4,6 +4,9 @@ import { BrowserModule } from '@angular/platform-browser';
 //librerias
 import { HttpClientModule } from '@angular/common/http'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EditorModule } from '@tinymce/tinymce-angular';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+
 
 
 //componentes
@@ -20,6 +23,7 @@ import { CardProductComponent } from './components/card-product/card-product.com
 import { ProfileComponent } from './components/profile/profile.component';
 import { ProductsComponent } from './components/profile/products/products.component';
 import { ClientsComponent } from './components/profile/clients/clients.component';
+import { NewProductComponent } from './components/profile/new-product/new-product.component';
 
 @NgModule({
   declarations: [
@@ -34,14 +38,17 @@ import { ClientsComponent } from './components/profile/clients/clients.component
     CardProductComponent,
     ProfileComponent,
     ProductsComponent,
-    ClientsComponent
+    ClientsComponent,
+    NewProductComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    EditorModule,
+    SweetAlert2Module.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
